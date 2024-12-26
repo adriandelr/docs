@@ -1,188 +1,189 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
-		/>
-		<!-- Favorite Icon -->
-		<link rel="icon" href="images/favicon.ico" />
-		<!-- Link Material Icon -->
-		<link href="css/icon.css?family=Material+Icons" rel="stylesheet" />
-		<!-- Link Emoji CSS -->
-		<link href="css/emoji.css" rel="stylesheet" />
-		<!-- Link Docute Styles -->
-		<link rel="stylesheet" href="lib/docute/docute.css" />
-	</head>
-	<body>
-		<div id="docute"></div>
-		<script src="/lib/docute/docute.js"></script>
-		<script>
-			const url = new URL(window.location.href)
-			const urlParam = url.hash.split('#/')[1]
-			const isPersonal = urlParam === 'int'
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Favorite Icon -->
+    <link rel="icon" href="./images/favicon.ico" />
+    <!-- Link Material Icon -->
+    <link href="./css/icon.css?family=Material+Icons" rel="stylesheet" />
+    <!-- Link Emoji CSS -->
+    <link href="./css/emoji.css" rel="stylesheet" />
+    <!-- Link Docute Styles -->
+    <link rel="stylesheet" href="./lib/docute/docute.css" />
+  </head>
+  <body>
+    <div id="docute"></div>
+    <script src="./lib/docute/docute.js"></script>
+    <script>
+      const url = new URL(window.location.href);
+      const urlParam = url.hash.split("#/")[1];
+      const isPersonal = urlParam === "int";
 
-			let updatedSidebar = [
-				{ children: [{ title: 'Introduction', link: '/' }] },
-				{ children: [{ title: 'The Web', link: '/the-web' }] },
-				{ children: [{ title: 'IDE Setup', link: '/ide-setup' }] },
-				{
-					title: '101 Sessions',
-					children: [
-						{
-							title: 'HTML',
-							link: '/101-sessions/html',
-						},
-						{ title: 'CSS', link: '/101-sessions/css' },
-						{
-							title: 'JavaScript',
-							link: '/101-sessions/js',
-						},
-						{ title: 'ES6', link: '/101-sessions/es6' },
-						{
-							title: 'WFF',
-							link: '/101-sessions/wff',
-						},
-						{
-							title: 'Lodash',
-							link: '/101-sessions/lodash',
-						},
-						{
-							title: 'Angular',
-							link: '/101-sessions/angular',
-						},
-						{
-							title: 'React',
-							link: '/101-sessions/react',
-						},
-						{
-							title: 'Vue',
-							link: '/101-sessions/vue',
-						},
-					],
-					collapsable: false,
-				},
-			]
+      let updatedSidebar = [
+        { children: [{ title: "Introduction", link: "/" }] },
+        { children: [{ title: "The Web", link: "/the-web" }] },
+        { children: [{ title: "IDE Setup", link: "/ide-setup" }] },
+        {
+          title: "101 Sessions",
+          children: [
+            {
+              title: "HTML",
+              link: "/101-sessions/html",
+            },
+            { title: "CSS", link: "/101-sessions/css" },
+            {
+              title: "JavaScript",
+              link: "/101-sessions/js",
+            },
+            { title: "ES6", link: "/101-sessions/es6" },
+            {
+              title: "WFF",
+              link: "/101-sessions/wff",
+            },
+            {
+              title: "Lodash",
+              link: "/101-sessions/lodash",
+            },
+            {
+              title: "Angular",
+              link: "/101-sessions/angular",
+            },
+            {
+              title: "React",
+              link: "/101-sessions/react",
+            },
+            {
+              title: "Vue",
+              link: "/101-sessions/vue",
+            },
+          ],
+          collapsable: false,
+        },
+      ];
 
-			if (isPersonal) {
-				updatedSidebar.push({
-					title: 'INT Sessions',
-					children: [
-						{
-							title: 'Basics',
-							link: '/int-sessions/basics',
-						},
-						{
-							title: 'React',
-							link: '/int-sessions/react',
-						},
-						{
-							title: 'Vue',
-							link: '/int-sessions/vue',
-						},
-					],
-					collapsable: false,
-				})
+      if (isPersonal) {
+        updatedSidebar.push({
+          title: "INT Sessions",
+          children: [
+            {
+              title: "Basics",
+              link: "/int-sessions/basics",
+            },
+            {
+              title: "React",
+              link: "/int-sessions/react",
+            },
+            {
+              title: "Vue",
+              link: "/int-sessions/vue",
+            },
+          ],
+          collapsable: false,
+        });
 
-				window.history.pushState({}, '', url.origin)
-			}
+        window.history.pushState({}, "", url.origin);
+      }
 
-			window.onhashchange = () => location.reload()
+      window.onhashchange = () => location.reload();
 
-			new Docute({
-				target: '#docute',
-				title: 'Front-End Docs',
-				sourcePath: './md',
-				darkThemeToggler: true,
-				imageZoom: true,
-				nav: [
-					{ title: 'Introduction', link: '/' },
-					{
-						title: 'Helpful Links',
-						children: [
-							{
-								title: 'Best JavaScript Frameworks to Use in 2021',
-								link: 'https://medium.com/theleanprogrammer/best-javascript-frameworks-to-use-in-2021-b0d36790c016',
-							},
-							{
-								title: 'Semantic HTML tags',
-								link: 'https://www.developerdrive.com/what-are-semantic-html-tags/',
-							},
-							{
-								title: 'Frontend Optimization - 9 Tips to Improve Web Performance',
-								link: 'https://www.keycdn.com/blog/frontend-optimization',
-							},
-							{
-								title: 'Software Testing Help',
-								link: 'https://www.softwaretestinghelp.com/',
-							},
-							{
-								title: 'Markdown Basic Syntax',
-								link: 'https://www.markdownguide.org/basic-syntax/',
-							},
-							{
-								title: 'Markdown Extended Syntax',
-								link: 'https://www.markdownguide.org/extended-syntax/',
-							},
-						],
-					},
-				],
-				sidebar: updatedSidebar,
-			})
-		</script>
-		<style>
-			/* Set font family */
-			body {
-				font-family: Helvetica;
-			}
+      new Docute({
+        target: "#docute",
+        title: "Front-End Docs",
+        sourcePath: "./md",
+        darkThemeToggler: true,
+        imageZoom: true,
+        nav: [
+          { title: "Introduction", link: "/" },
+          {
+            title: "Helpful Links",
+            children: [
+              {
+                title: "Best JavaScript Frameworks to Use in 2021",
+                link: "https://medium.com/theleanprogrammer/best-javascript-frameworks-to-use-in-2021-b0d36790c016",
+              },
+              {
+                title: "Semantic HTML tags",
+                link: "https://www.developerdrive.com/what-are-semantic-html-tags/",
+              },
+              {
+                title:
+                  "Frontend Optimization - 9 Tips to Improve Web Performance",
+                link: "https://www.keycdn.com/blog/frontend-optimization",
+              },
+              {
+                title: "Software Testing Help",
+                link: "https://www.softwaretestinghelp.com/",
+              },
+              {
+                title: "Markdown Basic Syntax",
+                link: "https://www.markdownguide.org/basic-syntax/",
+              },
+              {
+                title: "Markdown Extended Syntax",
+                link: "https://www.markdownguide.org/extended-syntax/",
+              },
+            ],
+          },
+        ],
+        sidebar: updatedSidebar,
+      });
+    </script>
+    <style>
+      /* Set font family */
+      body {
+        font-family: Helvetica;
+      }
 
-			/* Header spacing adjustment */
-			.Wrap {
-				max-width: calc(100% - 70px);
-			}
+      /* Header spacing adjustment */
+      .Wrap {
+        max-width: calc(100% - 70px);
+      }
 
-			/* Set hover links text color */
-			a:hover {
-				color: var(--link-color);
-			}
+      /* Set hover links text color */
+      a:hover {
+        color: var(--link-color);
+      }
 
-			/* Set size and sharpens Image */
-			img {
-				display: block;
-				image-rendering: -moz-crisp-edges; /* Firefox */
-				image-rendering: -o-crisp-edges; /* Opera */
-				image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-				image-rendering: crisp-edges;
-				-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
-			}
+      /* Set size and sharpens Image */
+      img {
+        display: block;
+        image-rendering: -moz-crisp-edges; /* Firefox */
+        image-rendering: -o-crisp-edges; /* Opera */
+        image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+        image-rendering: crisp-edges;
+        -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+      }
 
-			/*Set logo width*/
-			img[alt='fw-logo'] {
-				width: 170px;
-			}
-			img[alt='react-logo'],
-			img[alt='vue-logo'] {
-				width: 130px;
-				margin: 0 auto;
-			}
+      /*Set logo width*/
+      img[alt="fw-logo"] {
+        width: 170px;
+      }
+      img[alt="react-logo"],
+      img[alt="vue-logo"] {
+        width: 130px;
+        margin: 0 auto;
+      }
 
-			/*Center images*/
-			.ImageZoom {
-				width: 100%;
-			}
+      /*Center images*/
+      .ImageZoom {
+        width: 100%;
+      }
 
-			/* Fix for dropdown link alignment */
-			.header-nav-item {
-				height: auto !important;
-			}
+      /* Fix for dropdown link alignment */
+      .header-nav-item {
+        height: auto !important;
+      }
 
-			/* Set nav link cursor */
-			/* Set section link cursor */
-			.dropdown-trigger,
-			summary {
-				cursor: pointer !important;
-			}
-		</style>
-	</body>
+      /* Set nav link cursor */
+      /* Set section link cursor */
+      .dropdown-trigger,
+      summary {
+        cursor: pointer !important;
+      }
+    </style>
+  </body>
 </html>
