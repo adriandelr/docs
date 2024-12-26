@@ -19,10 +19,6 @@
     <div id="docute"></div>
     <script src="./lib/docute/docute.js"></script>
     <script>
-      const url = new URL(window.location.href),
-        urlParam = url.hash.split("#/")[1],
-        isPersonal = urlParam === "int";
-
       let updatedSidebar = [
         { children: [{ title: "Introduction", link: "/" }] },
         { children: [{ title: "The Web", link: "/the-web" }] },
@@ -65,26 +61,28 @@
         },
       ];
 
-      if (isPersonal) {
-        updatedSidebar.push({
-          title: "INT Sessions",
-          children: [
-            {
-              title: "Basics",
-              link: "/int-sessions/basics",
-            },
-            {
-              title: "React",
-              link: "/int-sessions/react",
-            },
-            {
-              title: "Vue",
-              link: "/int-sessions/vue",
-            },
-          ],
-          collapsable: false,
-        });
-      }
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "I") {
+          updatedSidebar.push({
+            title: "INT Sessions",
+            children: [
+              {
+                title: "Basics",
+                link: "/int-sessions/basics",
+              },
+              {
+                title: "React",
+                link: "/int-sessions/react",
+              },
+              {
+                title: "Vue",
+                link: "/int-sessions/vue",
+              },
+            ],
+            collapsable: false,
+          });
+        }
+      });
 
       new Docute({
         target: "#docute",
