@@ -19,9 +19,9 @@
     <div id="docute"></div>
     <script src="./lib/docute/docute.js"></script>
     <script>
-      const url = new URL(window.location.href);
-      const urlParam = url.hash.split("#/")[1];
-      const isPersonal = urlParam === "int";
+      const url = new URL(window.location.href),
+        urlParam = url.hash.split("#/")[1],
+        isPersonal = urlParam === "int";
 
       let updatedSidebar = [
         { children: [{ title: "Introduction", link: "/" }] },
@@ -84,8 +84,6 @@
           ],
           collapsable: false,
         });
-
-        window.history.pushState({}, "", url.origin);
       }
 
       window.onhashchange = () => location.reload();
