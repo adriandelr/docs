@@ -19,7 +19,8 @@
     <div id="docute"></div>
     <script src="./lib/docute/docute.js"></script>
     <script>
-      let updatedSidebar = [
+      // Prepare sidebar entries
+      let sidebarEntries = [
         { children: [{ title: "Introduction", link: "/" }] },
         { children: [{ title: "The Web", link: "/the-web" }] },
         { children: [{ title: "IDE Setup", link: "/ide-setup" }] },
@@ -61,9 +62,10 @@
         },
       ];
 
+      // When I is triggered, add int-sessions
       document.addEventListener("keydown", (event) => {
         if (event.key === "I") {
-          updatedSidebar.push({
+          sidebarEntries.push({
             title: "INT Sessions",
             children: [
               {
@@ -84,6 +86,59 @@
         }
       });
 
+      // Searh entries logic
+      const searchBar = (entries) => {
+        return {
+          name: "searchBar",
+          extend(api) {
+            api.enableSearch({
+              handler: (keyword) => {
+                const results = [];
+                const lowerKeyword = keyword.toString().toLowerCase();
+
+                search = (obj) => {
+                  if (obj && typeof obj === "object") {
+                    for (const key in obj) {
+                      if (obj.hasOwnProperty(key)) {
+                        const value = obj[key];
+
+                        if (
+                          typeof value === "string" &&
+                          value.toLowerCase().includes(lowerKeyword)
+                        ) {
+                          obj.children
+                            ? results.push(...obj.children)
+                            : results.push(obj);
+                          break;
+                        }
+
+                        if (typeof value === "object") {
+                          search(value);
+                        }
+                      }
+                    }
+                  } else if (Array.isArray(obj)) {
+                    obj.forEach((item) => search(item));
+                  }
+                };
+
+                sidebarEntries.forEach((item) => search(item));
+                if (!results.length)
+                  results.push(...[{ title: "(No results)", link: "" }]);
+                return results;
+              },
+            });
+          },
+        };
+      };
+
+      // Add placeholder to input
+      setTimeout(() => {
+        const inputElement = document.querySelector(".search-input");
+        inputElement.placeholder = "Search title";
+      });
+
+      // Init doclib
       new Docute({
         target: "#docute",
         title: "Front-End Docs",
@@ -123,7 +178,8 @@
             ],
           },
         ],
-        sidebar: updatedSidebar,
+        sidebar: sidebarEntries,
+        plugins: [searchBar(sidebarEntries)],
       });
     </script>
     <style>
