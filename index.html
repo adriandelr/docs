@@ -86,6 +86,41 @@
         }
       });
 
+      // Prepare nav entries
+      const navEntries = [
+        { title: "Introduction", link: "/" },
+        {
+          title: "Helpful Links",
+          children: [
+            {
+              title: "Best JavaScript Frameworks to Use in 2021",
+              link: "https://medium.com/theleanprogrammer/best-javascript-frameworks-to-use-in-2021-b0d36790c016",
+            },
+            {
+              title: "Semantic HTML tags",
+              link: "https://www.developerdrive.com/what-are-semantic-html-tags/",
+            },
+            {
+              title:
+                "Frontend Optimization - 9 Tips to Improve Web Performance",
+              link: "https://www.keycdn.com/blog/frontend-optimization",
+            },
+            {
+              title: "Software Testing Help",
+              link: "https://www.softwaretestinghelp.com/",
+            },
+            {
+              title: "Markdown Basic Syntax",
+              link: "https://www.markdownguide.org/basic-syntax/",
+            },
+            {
+              title: "Markdown Extended Syntax",
+              link: "https://www.markdownguide.org/extended-syntax/",
+            },
+          ],
+        },
+      ];
+
       // Searh entries logic
       const searchBar = (entries) => {
         return {
@@ -145,39 +180,7 @@
         sourcePath: "./md",
         darkThemeToggler: true,
         imageZoom: true,
-        nav: [
-          { title: "Introduction", link: "/" },
-          {
-            title: "Helpful Links",
-            children: [
-              {
-                title: "Best JavaScript Frameworks to Use in 2021",
-                link: "https://medium.com/theleanprogrammer/best-javascript-frameworks-to-use-in-2021-b0d36790c016",
-              },
-              {
-                title: "Semantic HTML tags",
-                link: "https://www.developerdrive.com/what-are-semantic-html-tags/",
-              },
-              {
-                title:
-                  "Frontend Optimization - 9 Tips to Improve Web Performance",
-                link: "https://www.keycdn.com/blog/frontend-optimization",
-              },
-              {
-                title: "Software Testing Help",
-                link: "https://www.softwaretestinghelp.com/",
-              },
-              {
-                title: "Markdown Basic Syntax",
-                link: "https://www.markdownguide.org/basic-syntax/",
-              },
-              {
-                title: "Markdown Extended Syntax",
-                link: "https://www.markdownguide.org/extended-syntax/",
-              },
-            ],
-          },
-        ],
+        nav: navEntries,
         sidebar: sidebarEntries,
         plugins: [searchBar(sidebarEntries)],
       });
