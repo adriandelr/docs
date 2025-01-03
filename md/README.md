@@ -12,9 +12,9 @@ To start, these are recommended development applications we need:
 
 **Browser**: [Chrome](https://chrome.google.com/) - The most popular and compatible browser.
 
-**NodeJS**: [NodeJS](https://nodejs.org/) - A runtime environment used to run code on the server side.
+**IDE**: [VSCode](https://code.visualstudio.com/) - Preferred code editor to write, edit, test and debug.
 
-**IDE**: [VSCode](https://code.visualstudio.com/) - Our preferred code editor to write, edit, test and debug.
+**Runtime Server**: [NodeJS](https://nodejs.org/) - An environment to run code on the server side.
 
 ### Nice to have
 
