@@ -26,13 +26,13 @@ To start, these are recommended development applications we need:
 
 ## Insights
 
-As a striving Front-End developer, I gave time.
+As a striving Front-End developer like you,
 
 I created this documentation for the purpose to share learning references.
 
 You are more than welcome to update this page and send a pull request at [docs repo](https://github.com/adriandelr/docs).
 
-Created using [Docute](https://docute.egoist.dev/), a pleasant looking, runtime SPA markdown renderer.
+Created with [Docute](https://docute.egoist.dev/), credits to the pleasant looking, runtime SPA markdown renderer.
 
 ## Contribution
 
