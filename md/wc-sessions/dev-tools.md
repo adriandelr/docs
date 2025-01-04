@@ -34,9 +34,9 @@ You can also see the amount of data transferred for this request and the time it
 
 ## Headers
 
-![devtools-network](images/devtools-network-2.png)
-
 If you click on this request, you’ll see more details. In the **Headers** tab, you can view all the request and response headers.
+
+![devtools-network](images/devtools-network-2.png)
 
 Here are some general headers:
 
