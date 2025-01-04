@@ -2,68 +2,117 @@
 
 Duration: 30 mins
 
-## WWW (World Wide Web)
+## www - World Wide Web
 
-A system of linked documents or information in the internet through hypertext links.
+A network of interconnected documents or information on the internet via hypertext links.
 
 ## Web Development
 
 #### Front-End / UI-UX
 
-The visual aspect where you see in the browser and what you interact with.
+The graphical interface that you view and interact with in the browser.
 
 #### Back-End / Database
 
-The part that stores data that powers the Front-End.
+The component that stores the data driving the Front-End.
 
 #### Full-Stack / End-to-End
 
-Both Frontend and Backend.
+Both the client-side and server-side.
 
 ## Web Architecture
 
-TBA
+The structure and design of a web system, outlining how its components interact and function together.
+
+Key Points
+
+- Describes the different types of web architectures (Monolithic, Microservices, Serverless, etc.) and their benefits.
+- Explores the importance of APIs in connecting various components of a web application.
+- Details how a proper web architecture can handle high traffic, complex features, and ensure reliability.
+- Touches on best practices for scaling applications and making them adaptable to future growth.
+
+It highlights that choosing the right architecture for the specific needs of an application is key to its success, with a strong focus on adaptability and scalability.
+
+It is a solid foundation on web application architecture, offering insights into modern practices, design models, and best practices for building scalable and efficient web apps.
+
+![web-architecture](images/web-architecture.png)
+
+The architecture covers components like front-end, back-end, databases, APIs, microservices, cloud infrastructure, and containers.
+
+The diagram helps explain the flow of data and interaction between each component.
 
 ## Languages
 
 #### HTML (Hyper Text Markup Language Standard)
 
-The building blocks of our web pages.
+The building blocks that make up our web pages.
 
 #### CSS (Cascading Style Sheets)
 
-For styling web pages and making them beautiful.
+To design and enhance the appearance of web pages.
 
 #### JavaScript
 
-To add interactive components to our web pages.
+To incorporate features and interactivity into our web pages.
 
-## Browsing the Web
+#### TypeScript
+
+A programming language developed by Microsoft to overcome some of the limitations of JavaScript.
+
+## JavaScript libraries and frameworks
+
+Used for building user interfaces, particularly for `single-page applications` (SPAs).
+
+![js-lib-fw](images/js-lib-fw.png)
+
+Building websites usually involves many repetitive tasks, which is where front-end frameworks and libraries come in.
+
+A framework or library provides a lot of reusable code, allowing us to complete tasks more quickly.
+
+That’s why many companies use popular frameworks like **React**, **Angular**, and **Vue**.
+
+You don’t need to learn all of these. Different companies use different tools based on the needs of their projects.
+
+When starting out, focus on `React` since it’s the most popular tool to date.
+
+## Version Control System
+
+We use version control systems to manage project history and collaborate effectively with others.
+
+## Browsing The Web
 
 What happens when you browse the internet?
 
-`URL` Uniform Resource Location
+**URL** stands for `Uniform Resource Location`
 
-A way to locate a resource in the internet.
+A way for finding a resource on the internet.
 
-#### Resources
+#### Web Resources
 
--   Weg pages (HTML documents)
--   Images
--   Video files
--   Fonts
+Refer to any content or data available over the internet that can be accessed or interacted with. These can include:
+
+1. **Web Pages**: HTML documents that contain text, images, and other content.
+2. **Images and Videos**: Media files such as .jpg, .png, .mp4, etc.
+3. **Files**: Documents like PDFs, Word files, and software downloads.
+4. **APIs**: Interfaces that allow different applications to communicate with each other.
+5. **Databases**: Structured collections of data that websites or applications query to retrieve information.
+6. **Scripts**: JavaScript or other coding resources used to add interactivity or functionality to websites.
+7. **Fonts and Stylesheets**: Resources for styling and typography (e.g., CSS files, web fonts).
+8. **Server Resources**: Servers that store and deliver content or handle requests.
+
+These resources can be accessed using a `URL`, and each serves a specific role in delivering content or functionality on the web.
 
 #### Client and Server
 
-The client(browser) request a service, then the server provides a service.
+The client (browser) requests a service, and the server responds by providing it.
 
 #### HTTP (Hypertext Transfer Protocol)
 
-A plain text language that the client and server use to communicate.
+A simple text-based language used for communication between the client and server.
 
 #### HTTPS (Secure)
 
-Transfered messages are encrypted.
+Transferred messages are secured through encryption.
 
 Structured HTTP Protocol
 
@@ -72,7 +121,7 @@ Structured HTTP Protocol
 
 ```
 GET /index.html HTTP/2.0
-Host: https://delrosarioa.bitbucket.io/
+Host: https://adriandelr.github.io/
 Accept-Language: en-us
 ```
 
@@ -80,7 +129,7 @@ Accept-Language: en-us
 
 ## Request and Response
 
-We sent and receive these messages using the protocol.
+We send and receive these messages via the protocol.
 
 <details>
   <summary>Response</summary>
@@ -100,4 +149,6 @@ Content-Type: text/html
 
 ## Rendering
 
-After a successful excahnge of message, we retrieve the file(HTML Document). The browser reads it and renders the DOM(Document Object Model) that contains references to our resources.
+Once the message exchange is successful, we fetch the file (HTML document).
+
+The browser processes the file and displays the DOM (Document Object Model), which includes references to our resources.

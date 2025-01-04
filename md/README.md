@@ -26,7 +26,7 @@ To start, these are the recommended development applications we need:
 
 ## Insights
 
-As a striving Front-End developer like you,
+As a resourceful Front-End developer,
 
 I created this documentation for the purpose to share and learn.
 
