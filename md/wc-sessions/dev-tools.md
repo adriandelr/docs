@@ -32,9 +32,9 @@ With this request, the browser requested a ‘document’, and the status of the
 
 You can also see the amount of data transferred for this request and the time it took to receive the response.
 
-![devtools-network](images/devtools-network-2.png)
-
 ## Headers
+
+![devtools-network](images/devtools-network-2.png)
 
 If you click on this request, you’ll see more details. In the **Headers** tab, you can view all the request and response headers.
 
