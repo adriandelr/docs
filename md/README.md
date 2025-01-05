@@ -24,6 +24,8 @@ To start, these are the recommended development applications we need:
 
 **Writing**: [Grammarly](https://app.grammarly.com/) - Smarter way to write and fix grammatical errors.
 
+**AI Text to Speech**: [NaturalReader](https://www.naturalreaders.com/)
+
 ## Insights
 
 As a resourceful Front-End developer,
