@@ -18,7 +18,7 @@ We use the basic principles of the HTTP protocol to enable creating, reading, up
 
 Here are the commonly used HTTP methods:
 
-### Starting with commonly used verb:
+_(Starting with commonly used verb)_
 
 1. **GET**: To get data.
 2. **POST**: To create data.
@@ -30,7 +30,7 @@ Here are the commonly used HTTP methods:
 
 ...
 
-### Ending with uncommonly used noun:
+_(And ending with uncommonly used noun)_
 
 6. **HEAD**: To get header data without a body.
 7. **OPTIONS**: To get supported communication methods.
