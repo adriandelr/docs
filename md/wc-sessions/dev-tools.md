@@ -1,5 +1,7 @@
 # Chrome DevTools
 
+_Duration: ~20 mins_
+
 Is a powerful suite of tools used by front-end developers for debugging, testing, and optimizing websites and web applications.
 
 Shortcuts for accessing on both Mac and Windows:

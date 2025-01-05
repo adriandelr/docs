@@ -1,6 +1,6 @@
 # The Web
 
-Duration: 30 mins
+_Duration: ~30 mins_
 
 ## www - World Wide Web
 
