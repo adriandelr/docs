@@ -20,9 +20,9 @@ We use the basic principles of the HTTP protocol to enable creating, reading, up
 
 ## HTTP Methods
 
-Here are the commonly used HTTP methods:
+Here are the commonly used HTTP methods.
 
-_(Starting with commonly used verb)_
+Starting with common ones:
 
 1. **GET**: To get data.
 2. **POST**: To create data.
@@ -30,17 +30,97 @@ _(Starting with commonly used verb)_
 4. **DELETE**: To delete data.
 5. **PATCH**: To partially update data.
 
-#### Examples
+#### Examples (Request→←Response)
 
-...
+```
+→ GET /api/items
 
-_(And ending with uncommonly used noun)_
+←
+[
+    { id: 1, name: '' },
+    { id: 2, name: '' },
+    ...
+]
+```
+
+```
+→ GET /api/items/1
+
+← { id: 1, name: '' }
+```
+
+```
+→ POST /api/items
+body: { name: '' }
+
+← { id: 1, name: '' }
+```
+
+```
+→ PUT /api/items/1
+body: { name: '' }
+
+← { id: 1, name: '' }
+```
+
+```
+→ DELETE /api/items/1
+
+← (blank)
+```
+
+And ending with:
 
 6. **HEAD**: To get header data without a body.
 7. **OPTIONS**: To get supported communication methods.
 8. **TRACE**: To get sensitive data like headers that was sent to the server.
 9. **CONNECT**: To set up a secure link to the server or HTTPS.
 
+<details>
+  <summary>Examples</summary>
+
+```
+→ HEAD /api/items/1
+
+← (blank)
+
+Response Headers
+Content-Type: application/json
+Content-Length: 512
+```
+
+```
+→ OPTIONS /api/items
+
+← (blank)
+
+Response Headers
+Allow: GET, POST, PUT, DELETE, OPTIONS
+```
+
+```
+→ TRACE /api/items/1
+
+← (blank)
+
+Response Headers
+Content-Type: message/http
+
+TRACE /api/items/1
+Host: example.com
+```
+
+```
+→ CONNECT example.com:443
+
+← (blank)
+
+Response Headers
+Proxy-agent: example-proxy/1.1
+```
+
+</details>
+
 ## REST Convention
 
-...
+These follow RESTful convention, where resources like 'items' are exposed via simple, meaningful URLs, supporting operations like creation or updates through standard HTTP methods.
