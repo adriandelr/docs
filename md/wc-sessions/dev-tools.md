@@ -36,7 +36,7 @@ With this request, the browser requested a ‘document’, and the status of the
 
 You can also see the amount of data transferred for this request and the time it took to receive the response.
 
-## Headers
+### Headers
 
 If you click on this request, you’ll see more details. In the **Headers** tab, you can view all the request and response headers.
 
@@ -53,12 +53,12 @@ Below, we have the **Response Headers**. There are many headers here, but you do
 
 For example, the _Content-Type_ header indicates the type of the response, which is ‘text/html’. You can also see the Date header, showing the time when the response was sent.
 
-## Preview
+### Preview
 
 In the **Preview** tab, you can see a preview of the HTML document returned from the server, which is the homepage of Google. This HTML document includes references to other resources, such as images, fonts, and more.
 
 All these subsequent requests are sent to download the resources. Right below the first request, you’ll see a request for downloading a PNG or an image file. There is another request for getting a different image, and we also have requests for two different fonts.
 
-## Filter
+### Filter
 
 We can easily filter this list. Click on the **Filter** icon. By default, all requests are shown, but we can filter by request type. For example, selecting “Doc” will show requests for downloading HTML documents, while selecting “Font” will display the requests sent to download fonts.
