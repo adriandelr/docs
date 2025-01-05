@@ -2,7 +2,9 @@
 
 _Duration: ~20 mins_
 
-**REpresentational State Transfer** Is basically a standard for building these HTTP services (RESTful Services).
+## REpresentational State Transfer
+
+Is basically a standard for building these HTTP services (RESTful Services).
 
 ## Client-Server Architecture
 

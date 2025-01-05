@@ -1,6 +1,8 @@
-# Chrome DevTools
+# DevTools
 
 _Duration: ~20 mins_
+
+## Chrome Developer Tools
 
 Is a powerful suite of tools used by front-end developers for debugging, testing, and optimizing websites and web applications.
 
