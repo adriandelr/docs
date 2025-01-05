@@ -87,6 +87,17 @@ What happens when you browse the internet?
 
 A way for finding a resource on the internet.
 
+#### URL Breakdown
+
+The components of a URL include:
+
+1. **Scheme** (http, https, ftp): The protocol used.
+2. **Host** (www.example.com): The domain name or IP address.
+3. **Port** (:8080): An optional number of a specific port.
+4. **Path** (/path/to/resource): The directory or file location on the server.
+5. **Query** (?id=123&name=John): Parameters and values to display dynamic content.
+6. **Fragment** (#section): A reference to a specific part of the page, indicated by a hash.
+
 #### Web Resources
 
 Refer to any content or data available over the internet that can be accessed or interacted with. These can include:
@@ -97,7 +108,7 @@ Refer to any content or data available over the internet that can be accessed or
 4. **APIs**: Interfaces that allow different applications to communicate with each other.
 5. **Databases**: Structured collections of data that websites or applications query to retrieve information.
 6. **Scripts**: JavaScript or other coding resources used to add interactivity or functionality to websites.
-7. **Fonts and Stylesheets**: Resources for styling and typography (e.g., CSS files, web fonts).
+7. **Fonts and Stylesheets**: Resources for styling and typography (CSS files, web fonts).
 8. **Server Resources**: Servers that store and deliver content or handle requests.
 
 These resources can be accessed using a `URL`, and each serves a specific role in delivering content or functionality on the web.
