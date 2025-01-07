@@ -6,13 +6,13 @@ _Duration: ~20 mins_
 
 Is a powerful suite of tools used by front-end developers for debugging, testing, and optimizing websites and web applications.
 
-Shortcuts for accessing on both Mac and Windows:
+## Shortcuts
+
+For accessing on both Mac and Windows:
 
 - Mac: `Cmd + Option + I`
 - Windows: `Ctrl + Shift + I`
 - Both: `F12`
-
-You can also access it through the browser menu or by right-clicking anywhere on the page and selecting “Inspect.”
 
 ## Docking
 
@@ -21,6 +21,16 @@ By default, it is docked to the bottom of the screen. However, you can dock it t
 ![docking](images/docking.png)
 
 Many developers prefer docking it on the left side, with the website displayed on the right side.
+
+## Inspect using Developer Tools
+
+1. Open `Developer Tools` by right clicking on the page and click `Inspect`.
+2. Go to `Network` Tab and refresh the page.
+3. View all the listed HTTP requests.
+4. View the number and size of request at the lower part.
+5. Inspect each request's properties divided in column.
+6. We have the name, status, type, size, time, etc.
+7. Click the on the request and check the Headers (General, Request and Response).
 
 ## Network
 

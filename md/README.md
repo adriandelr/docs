@@ -4,7 +4,7 @@
 
 Welcome to the Front-End Docs!
 
-Here, you’ll find helpful sections for beginners, providing clear and easy-to-follow sessions to help you get started with the development.
+Here, you’ll find essential and helpful sections for beginners, providing clear and easy-to-follow sessions to help you get started with the development.
 
 ## Preparation
 
