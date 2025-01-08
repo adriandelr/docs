@@ -1,4 +1,4 @@
-# HTML
+# HTML5
 
 _Duration: ~45 mins_
 
@@ -8,9 +8,15 @@ _Required: VSCode / Live Server_
 
 Is the standard language used to create and structure web pages. It consists a series of elements that tell the browser how to display content.
 
+## Background
+
+HTML5 was developed to address the limitations of previous versions and to better support multimedia, graphics, and responsive design. It was first introduced in 2008 and became a W3C Recommendation in 2014.
+
+It brought significant improvements, such as new semantic elements, multimedia audio/video support, and APIs for offline storage and more dynamic web applications.
+
 ## Your First HTML
 
-Create a new folder named “HTML” and open it in [_VSCode_](https://code.visualstudio.com/). Since the folder is empty, add a new file called index.html. This typically represents the homepage of a website.
+Create a new folder named **“HTML”** and open it in [_VSCode_](https://code.visualstudio.com/). Since the folder is empty, add a new file called index.html. This typically represents the homepage of a website.
 
 > To close the **Explorer** panel, press `CMD+B` on Mac or `CTRL+B` on Windows.
 
@@ -32,7 +38,7 @@ It is not case-sensitive, so it doesn’t matter if you use uppercase or lowerca
 
 ## Defining Basic Structure
 
-We use `HTML elements` to define the structure of the web page.
+We use `HTML Elements` to define the structure of the web page.
 
 The first element we're going to use is the html element. Type 'html', then press tab:
 
@@ -62,7 +68,7 @@ Here we have two attributes, 'src' and 'alt'. With these attributes, we can supp
 
 ![html-body-img-tag](images/html-body-img-tag.png)
 
-Create a new folder called "images" and add any image you’d like to display on the page.
+Create a new folder called **"images"** and add any image you’d like to display on the page.
 
 ![html-body-img-alt-tags](images/html-body-img-alt-tags.png)
 
