@@ -2,7 +2,7 @@
 
 _Duration: ~45 mins_
 
-_Required: VSCode / Live Server_
+_Required Extension: Live Server_
 
 ## Hyper Text Markup Language
 
@@ -26,7 +26,9 @@ Next, we need to specify that this is an HTML5 document. Type a left angle brack
 
 VSCode automatically generates this line of code for us. It tells the browser that this is an HTML5 document. This line is known as the **doctype declaration**:
 
-![html-generated-declaration](images/html-generated-declaration.png)
+```
+<!DOCTYPE html>
+```
 
 ### Declaration of Previous Version
 
@@ -42,7 +44,10 @@ We use `HTML Elements` to define the structure of the web page.
 
 The first element we're going to use is the html element. Type 'html', then press tab:
 
-![html-generated-tag](images/html-generated-tag.png)
+```
+<!DOCTYPE html>
+<html></html>
+```
 
 On the left side, we have the opening tag, and on the right side, we have the closing tag.
 
@@ -54,7 +59,14 @@ We use the **head** element to give browser information about this page.
 
 For example, here we can use the **title** element to specify the title of this page that appears in the _tab name of the browser_:
 
-![html-head-title-tags](images/html-head-title-tags.png)
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your First HTML</title>
+    </head>
+</html>
+```
 
 Inside the **body** element, we’ll add the elements that will appear on the page.
 
@@ -66,11 +78,31 @@ Type 'img' and press tab. The img element is different from the other elements w
 
 Here we have two attributes, 'src' and 'alt'. With these attributes, we can supply additional information about an element:
 
-![html-body-img-tag](images/html-body-img-tag.png)
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your First HTML</title>
+    </head>
+    <body>
+        <img src="" alt="">
+    </body>
+</html>
+```
 
 Create a new folder called **"images"** and add any image you’d like to display on the page.
 
-![html-body-img-alt-tags](images/html-body-img-alt-tags.png)
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your First HTML</title>
+    </head>
+    <body>
+        <img src="images/myimage.png" alt="My image description">
+    </body>
+</html>
+```
 
 In the **src** attribute’s value presented by double quotes, we can add the relative path to our image.
 
@@ -80,7 +112,18 @@ The **alt** attribute, or alternative text, is used to provide text that will be
 
 To add a text element, we use the p tag. Inside the tag, you can add the text you want to display:
 
-![html-body-p-tag](images/html-body-p-tag.png)
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your First HTML</title>
+    </head>
+    <body>
+        <img src="images/myimage.png" alt="My image description">
+        <p>I love working with HTML!</p>
+    </body>
+</html>
+```
 
 ## Running Our Page With Live Server
 
