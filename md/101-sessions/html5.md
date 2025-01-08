@@ -12,7 +12,7 @@ Is the standard language used to create and structure web pages. It consists a s
 
 HTML5 was developed to address the limitations of previous versions and to better support multimedia, graphics, and responsive design. It was first introduced in 2008 and became a W3C Recommendation in 2014.
 
-It brought significant improvements, such as new semantic elements, multimedia audio/video support, and APIs for offline storage and more dynamic web applications.
+It brought significant improvements, such as new semantic elements, multimedia audio/video support, APIs for offline storage, and more dynamic web applications.
 
 ## Your First HTML
 
