@@ -88,7 +88,7 @@ By using the [Live Server](https://marketplace.visualstudio.com/items?itemName=r
 
 With the document open, go to the **Status Bar** at the bottom of the IDE and click on the **“Go Live”** button to run the Live Server and view your HTML page in the browser.
 
-> After running server, you’ll notice the web address is in numeric: **127.0.0.1:5500**. This represents the **local computer address**, and the number after the colon is the **port** where the web server is waiting or listening.
+> After running server, you’ll notice the web address is in numeric: **127.0.0.1:5500**. This represents the **local computer address**, and the number after the colon is the **port** where the web server is waiting or listening. After that, we have **/index.html**, a forward slash followed by the name of our file.
 
 ## More About HTML5
 
