@@ -1,4 +1,4 @@
-# CSS3
+# CSS
 
 _Duration: ~30 mins_
 

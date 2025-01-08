@@ -1,4 +1,4 @@
-# HTML5
+# HTML
 
 _Duration: ~45 mins_
 
