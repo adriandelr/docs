@@ -2,7 +2,7 @@
 
 _Duration: ~60 mins_
 
-_Required Application: NodeJS_
+_Required Application: VSCode / NodeJS_
 
 ## Reputation
 
@@ -31,3 +31,28 @@ In summary, JavaScript code can be executed either in a browser or in Node, both
 **ECMAScript** is a `specification` that JavaScript adheres to, defined by the standards organization ECMA. The first version was released in 1997, and since _2015_, they have been issuing annual updates with the newest specification, known as `ES2015` or `ES6`. This specification introduced numerous new features to JavaScript.
 
 ## JavaScript In Use
+
+Each browser comes with a built-in _JavaScript engine_, allowing us to write and execute JavaScript code directly without needing any extra tools. This isn’t the approach used for building production application. It’s simply convenient for quick demonstrations.
+
+Open Chrome, right-click on an empty space, and select **“Inspect”**. This will open the Developer Tools. Navigate to the **Console** tab, where you can write and execute any valid JavaScript code examples.
+
+Enter the following:
+
+![js-log-hello](images/js-log-hello.png)
+
+> The left-pointing arrow in the console shows the return value of the expression. If a function doesn’t return a value, it will return `undefined`.
+
+You can also enter mathematical expressions here:
+
+```
+> 3 + 4
+◀ 7
+```
+
+You can also use methods like:
+
+```
+> alert('hey') (Displays a popup dialog with the message)
+```
+
+## Development Environment Setup
