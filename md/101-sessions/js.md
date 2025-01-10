@@ -2,7 +2,9 @@
 
 _Duration: ~60 mins_
 
-_Required Application: VSCode / NodeJS_
+_Required Applications: NodeJS_
+
+_Required Extension: Live Server_
 
 ## Reputation
 
@@ -40,8 +42,6 @@ Enter the following:
 
 ![js-log-hello](images/js-log-hello.png)
 
-> The left-pointing arrow in the console shows the return value of the expression. If a function doesn’t return a value, it will return `undefined`.
-
 You can also enter mathematical expressions here:
 
 ```
@@ -53,6 +53,9 @@ You can also use methods like:
 
 ```
 > alert('hey') (Displays a popup dialog with the message)
+◀ undefined
 ```
+
+> The left-pointing arrow in the console shows the return value of the expression. If a function doesn’t return a value, it will return `undefined`.
 
 ## Development Environment Setup

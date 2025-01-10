@@ -135,6 +135,10 @@ With the document open, go to the **Status Bar** at the bottom of the IDE and cl
 
 > We then have **/index.html**, a forward slash followed by the name of our file.
 
+## Boilerplate Document
+
+Use `!+tab` to automatically generate a basic HTML document.
+
 ## More About HTML5
 
 There are a lot of features, topics and tags to cover.
