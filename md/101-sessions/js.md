@@ -1,6 +1,6 @@
 # JavaScript
 
-_Duration: ~60 mins_
+_Duration: ~2 hr_
 
 _Required Applications: NodeJS_
 
@@ -58,4 +58,180 @@ You can also use methods like:
 
 > The left-pointing arrow in the console shows the return value of the expression. If a function doesn’t return a value, it will return `undefined`.
 
-## Development Environment Setup
+## Course Setup
+
+1. Begin by creating a folder named **‘training-js’**.
+
+2. Within the folder, create an HTML file and name it _index.html_.
+
+3. In the HTML file, do `!+tab` followed by the Tab key to generate a boilerplate document.
+
+4. In the same folder, create a JavaScript file named _basics.js_.
+
+## Script Placement (Internal)
+
+In HTML, scripts can be added either within the `<head>` itself or in the `<body>` section.
+
+```
+<head>
+    ...
+    <title>Document</title>
+    <script>
+        ...
+    </script>
+</head>
+```
+
+> Third-party code or scripts can be added here as an exception.
+
+### Ideal Placement
+
+The browser parses the file from top to bottom.
+
+Scripts in the `<head>` can block the rendering of elements, keeping the page occupied.
+
+By placing scripts at the end, just before the closing `</body>` tag, elements are rendered first, and the scripts are executed afterward:
+
+```
+<body>
+    ...
+    <script>
+        ...
+    </script>
+</body>
+```
+
+## File Reference (External)
+
+To reference an external file, we need to add a **src** attribute to the `<script>` tag:
+
+```
+<script src="basics.js">
+    ...
+</script>
+```
+
+This informs the browser that our JavaScript code is located in the _basics.js_ file.
+
+## Comment Expression
+
+```
+// We can add comments that JavaScript ignores during execution.
+// Preceded by two forward slashes, they are solely for documenting.
+// It helps other developers understand how the code is written.
+```
+
+> To understand more about comments, check out [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) extension.
+
+## Statement
+
+Expresses an action to be performed.
+
+Every statement must be ended with a semicolon `;`.
+
+Add this line to our _basics.js_ file:
+
+```
+console.log("Hello JavaScript"); // My first JavaScript code
+```
+
+## Separation Of Concerns
+
+In real-world applications, we often have thousands of lines of code.
+
+We do not want to write all of that code inline here.
+
+We want to **separate and extract** our JavaScript from the HTML code.
+
+## Quick Recap
+
+**HTML** is focused on content, while **JavaScript** controls how our web page behaves.
+
+### JavaScript In Node
+
+Node is a program that incorporates Google’s V8 JavaScript engine.
+
+We can provide it with a piece of JavaScript code, and it will execute just like in a browser.
+
+In the terminal, run:
+
+```
+node basics.js
+> Hello JavaScript
+```
+
+## Variables
+
+We use it to store data temporarily in the computer’s memory.
+
+We store the data in a location and assign it a name.
+
+With this name, we can retrieve the data from a specific location in the future.
+
+### Previously, Before ES6
+
+We use the `var` keyword to declare a variable.
+
+> The best practice is to use the `const/let` keyword to declare a variable.
+
+> By default, the value of a variable is undefined.
+
+```
+let name = "Adrian";
+console.log(name);
+```
+
+<details>
+  <summary>More on var, let, const</summary>
+
+**var**
+
+- Used in the earlier versions.
+- Non-blocking, available anywhere within the document or function.
+
+**let**
+
+- Used in 2015, ES6.
+- Block Scope, has scope only within the block where it is declared.
+
+**const**
+
+- Similar to definitions of Let variable.
+- Except that it cannot be redeclared and reassigned - constant.
+
+</details>
+
+### Rules When Naming Variables
+
+- It cannot be a `reserved keyword` (let, if, etc.).
+- The naming should be `meaningful`.
+- It cannot start with a `number` (1name).
+- It cannot contain a `space` or `hyphen` (-).
+- Use `camel case` notation.
+
+```
+let firstName;
+```
+
+- It is `case-sensitive`.
+
+```
+let FirstName;
+```
+
+- To separate multiple variables, use `commas`.
+
+```
+let firstName, lastName;
+```
+
+- The modern best practice is to declare each variable on a `separate line`.
+
+```
+let firstName = "Adrian";
+let lastName = "Del Rosario";
+```
+
+## Constants
+
+...
