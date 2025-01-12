@@ -181,8 +181,7 @@ let name = "Adrian";
 console.log(name);
 ```
 
-<details>
-  <summary>More on var, let, const</summary>
+## Var, Let, Const Variables
 
 **var**
 
@@ -198,8 +197,6 @@ console.log(name);
 
 - Similar to definitions of Let variable.
 - Except that it cannot be redeclared and reassigned - constant.
-
-</details>
 
 ### Rules When Naming Variables
 
@@ -229,9 +226,193 @@ let firstName, lastName;
 
 ```
 let firstName = "Adrian";
-let lastName = "Del Rosario";
+let lastName = "Delr";
 ```
 
 ## Constants
+
+There are situations where we don’t want a value to change to prevent certain bugs.
+
+Instead of a variable, we use a constant.
+
+> A variable’s value can change, but a constant’s value cannot.
+
+```
+const limit = 10;
+limit = 1;
+> TypeError: Assignment to constant variable.
+```
+
+> Use `const` when reassignment is not required, otherwise, use `let`.
+
+## Data Types
+
+The fixed type that can be assigned to a variable.
+
+### String
+
+Characters enclosed in quotes, used to represent text.
+
+```
+let user = "Adrian";
+```
+
+### Number
+
+Numeric values, both integers and decimal numbers.
+
+```
+let age = 32;
+```
+
+### Boolean
+
+Represents one of two reserved values: **t**rue or **false**.
+
+```
+let isShown = true;
+```
+
+### Undefined
+
+Variable that has been declared but not assigned a value.
+
+```
+let mobile;
+let email = undefined;
+```
+
+### Null
+
+Represents an intentional absence of a value, used to clear a variable.
+
+```
+let phone = null;
+```
+
+### typeof Operator
+
+To verify the data type of a variable.
+
+```
+let name = "Adrian";
+console.log(typeof name);
+> string
+```
+
+## Dynamic Typing
+
+One feature that separates JavaScript from many other programming languages is that it is a `dynamic language`.
+
+> In a _static_ language, th type of a variable cannot be changed, while in a _dynamic_ language, the type of variable can change during runtime.
+
+<details>
+  <summary>Runtime and Compile-time</summary>
+
+**Runtime** is the period when a program is executed while **Compile-time** is the phase when the code is being compiled, before execution.
+
+</details>
+
+```
+let name = "Adrian";
+console.log(typeof name);
+name = 1;
+typeof name;
+console.log(typeof name);
+
+> string
+> number
+```
+
+## Objects
+
+A value that consists of unordered key-value pairs as properties, enclosed in curly braces `{}`.
+
+```
+let person = {}; // Initialize an empty object
+person = { name: "Adrian", age: 32 }; // An object of person
+```
+
+### Ways To Access Key By Notation
+
+#### Dot Notation
+
+We use the `.` notation to access the value of a key property.
+
+```
+console.log(person.name)
+> Adrian
+```
+
+#### Bracket Notation
+
+Alternatively, we can access a key property(as string) to target an unknown or missing key before the runtime.
+
+```
+person["gender"] = "Male";
+console.log(person["gender"]);
+> Male
+```
+
+### Object Reference Type
+
+A reference type is a data type that stores a reference to the memory location of the actual data, rather than storing the data itself.
+
+```
+let person = { name: "Adrian", age: 32 };
+let refPerson = person;
+
+console.log(person); // { name: "Adrian", age: 32 }
+console.log(refPerson); // { name: "Adrian", age: 32 }
+
+refPerson.age = 33;
+
+console.log(person); // { name: "Adrian", age: 33 }
+console.log(refPerson); // { name: "Adrian", age: 33 }
+```
+
+To access the property in a dynamic way:
+
+```
+let selection = "name";
+person[selection] = "May";
+console.log(person[selection]);
+> May
+```
+
+## Arrays
+
+A value that contains an ordered collection of multiple types, enclosed in square brackets `[]`.
+
+```
+let colors = []; // Initialize an empty array
+colors = ["black", "white"] // An array of colors
+```
+
+### To Access An Element In Array
+
+```
+// Specify the index within the square brackets
+console.log(colors[0]);
+console.log(colors[1]);
+console.log(colors[2]);
+> black
+> white
+> undefined
+
+// Value of array and length
+console.log(colors);
+console.log(colors.length);
+> [ 'black', 'white' ]
+> 2
+```
+
+> By default, an array index begins at 0.
+
+> Technically, an array is an object supporting multiple values.
+
+> An array is a data structure used to represent a collection of items.
+
+## Functions
 
 ...
