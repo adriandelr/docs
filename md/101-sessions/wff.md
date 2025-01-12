@@ -1,10 +1,10 @@
-# Web File Formats
+# WFF
 
 _Duration: ~15 mins_
 
-## File Types
+## Web File Formats
 
-These are various types used in web development and browsing.
+These are various `file types` used in web development and browsing.
 
 ## Purpose
 
