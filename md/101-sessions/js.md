@@ -415,4 +415,86 @@ console.log(colors.length);
 
 ## Functions
 
-...
+A fundamental building blocks of JavaScript.
+
+A collection of statements that execute a task or compute a value.
+
+The logic of this function is to display a message in the console:
+
+```
+function greet() {
+  console.log("Hello JavaScript");
+}
+```
+
+The `{}` is the body of the function.
+
+> A function declaration doesn’t require a semicolon at the end, unlike other statements such as variable declarations.
+
+To run the function, parentheses and a semicolon are used to indicate the end of the statement or execution:
+
+```
+greet();
+> Hello JavaScript
+```
+
+### Using parameters
+
+Parameters are named values used in function declarations to accept inputs.
+
+Functions can have inputs and can affect the behavior of the function.
+
+We can define a variable as a parameter that is accessible only within the function, and not outside of it:
+
+```
+function greetByName(firstName, lastName) {
+  console.log("Hello " + firstName + " " + lastName);
+}
+// Assigns a value to each parameter.
+greetByName("Adrian", "Delr");
+> Hello Adrian Delr
+```
+
+> The default value of parameters is undefined.
+
+> Join values in a sequence using the `+` operator to combine strings.
+
+We refer to the value as an argument:
+
+- `Parameter`: name
+- `Argument`: Adrian
+
+```
+greetByName("May", "Delr");
+> May Delr
+```
+
+We can have more and different values or types arguments.
+
+## Roles Of A Function
+
+A **Fn** `performs a task` given the previous example,
+
+and `computes or returns a value`:
+
+```
+// Fn to compute the square root value
+function computeTheSquareRoot(number) {
+  return number * number;
+}
+
+// Declare a variable to supply the returned value
+let number = computeTheSquareRoot(3);
+console.log(number);
+> 9
+
+// Directly pass the value of the Fn
+console.log(computeTheSquareRoot(4));
+> 16
+```
+
+## More About JavaScript
+
+There are a lot of features, topics and methods to cover.
+
+To learn more, visit [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/).

@@ -143,4 +143,4 @@ Use `!+tab` to automatically generate a basic HTML document.
 
 There are a lot of features, topics and tags to cover.
 
-To learn more, visit [W3Schools HTML Tutorial](https://www.w3schools.com/Html/).
+To learn more, visit [W3Schools HTML Tutorial](https://www.w3schools.com/html/).

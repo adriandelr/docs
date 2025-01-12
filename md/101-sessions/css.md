@@ -105,4 +105,4 @@ This is how CSS works, and it is a different syntax from HTML.
 
 There are a lot of features, topics and style properties to cover.
 
-To learn more, visit [W3Schools CSS Tutorial](hhttps://www.w3schools.com/css/).
+To learn more, visit [W3Schools CSS Tutorial](https://www.w3schools.com/css/).
