@@ -32,6 +32,8 @@ In summary, JavaScript code can be executed either in a browser or in Node, both
 
 **ECMAScript** is a `specification` that JavaScript adheres to, defined by the standards organization ECMA. The first version was released in 1997, and since _2015_, they have been issuing annual updates with the newest specification, known as `ES2015` or `ES6`. This specification introduced numerous new features to JavaScript.
 
+You can know more about this in [W3Schools JS Versions](https://www.w3schools.com/js/js_versions.asp)
+
 ## JavaScript In Use
 
 Each browser comes with a built-in _JavaScript engine_, allowing us to write and execute JavaScript code directly without needing any extra tools. This isn’t the approach used for building production application. It’s simply convenient for quick demonstrations.
