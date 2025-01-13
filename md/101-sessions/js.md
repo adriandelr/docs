@@ -1,6 +1,6 @@
 # JavaScript
 
-_Duration: ~2 hr_
+_Duration: ~2 hrs_
 
 _Required Applications: NodeJS_
 
