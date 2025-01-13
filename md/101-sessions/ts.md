@@ -106,4 +106,62 @@ tsc -v
 
 ## Your First TypeScript
 
+Create a new folder for our project and name it **training-ts**, then open the folder in VSCode.
+
+Inside the folder, add a new file called **basics.ts**.
+
+Earlier, we covered that TypeScript is built on top of JavaScript, so we can say that TypeScript is a `extension` of JavaScript.
+
+In basics.ts, we can write any JavaScript code, and it will be valid TypeScript code:
+
+```
+console.log('Hello TypeScript');
+```
+
+Open the terminal with `CTRL + backtick` (`), and by using the TypeScript compiler, we can compile _basics.ts_:
+
+```
+tsc basics.ts
+```
+
+Go into the same folder, and you can see the result of the compilation. The **basics.js** file is generated after running the compiler.
+
+We have the exact same code because, we haven’t used any TypeScript-specific features.
+
+Let’s write some TypeScript code.
+
+In our file, we declare a variable using the `let` keyword called **age**, and annotate it with _number_. Then, we can initialize it with a value:
+
+```
+let count: number = 5;
+```
+
+By typing a colon followed by the type, we can `annotate` or specify the type of the variable.
+
+Here is the exciting part: since we declared _count_ as a number, we cannot assign it a string or any other type. If we try to do that, we’ll get an error, like this:
+
+```
+count = "hi";
+> Error: Type 'string' is not assignable to type 'number'.
+```
+
+With TypeScript, we can catch many mistakes at compile time. We do not have to run our application or unit tests to realize we accidentally set a _number_ to a _string_. The TypeScript compiler will let us know right away.
+
+Let’s remove the problematic line and recompile our file. Look at the JavaScript code that the TypeScript compiler generated:
+
+```
+basics.js
+var count = 5;
+```
+
+Instead of the let keyword, we have var, because by default, the TypeScript compiler uses an older version of JavaScript called ES5.
+
+> ECMAScript is a standard or specification, while JavaScript is the implementation of that specification. ES5 is an older specification that has been around for a long time, and its features have been implemented in browsers for over a decade now.
+
+To set up the TypeScript compiler to generate modern JavaScript, you can adjust the configuration to target a newer version of JavaScript.
+
+By default, TypeScript uses `var` instead of `let`, and _type annotations_ are `excluded` in the output. These annotations are only for the TypeScript compiler and do not appear in the final JavaScript code, as JavaScript itself doesn’t include variable types.
+
+## Configuring The TypeScript Compiler
+
 ...
