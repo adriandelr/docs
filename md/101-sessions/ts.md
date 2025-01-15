@@ -29,8 +29,8 @@ In **statically typed languages** like C++, C#, and Java, the types of variables
 For instance, in statically typed languages, when we declare a variable as an integer, and it can only store integer values. Assigning a string or any other data type to this variable would result in a compile-time error:
 
 ```
-int number = 3;
-number = "c";
+int count = 3;
+count = "c";
 ```
 
 #### Dynamically Typed
@@ -40,9 +40,9 @@ In **dynamically typed languages** like JavaScript, Python, and Ruby, the type o
 We can declare a variable, set it to a number, and later change it to a string. This variable does not have a fixed or static type. Its type is determined and can change at runtime:
 
 ```
-int number = 3;
-number = "c";
-Math.round(number);
+int count = 3;
+count = "c";
+Math.round(count);
 ```
 
 While this offers flexibility, it can also introduce problems. For instance, if we pass this variable to a function expecting a number, the application might misbehave or crash.
