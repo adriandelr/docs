@@ -162,7 +162,7 @@ To set up the TypeScript compiler to generate modern JavaScript, you can adjust 
 
 By default, TypeScript uses `var` instead of `let`, and _type annotations_ are `excluded` in the output. These annotations are only for the TypeScript compiler and do not appear in the final JavaScript code, as JavaScript itself doesn’t include variable types.
 
-## Configuring The TypeScript Compiler
+## TypeScript Compiler Configuration
 
 Let us create a configuration file for the TypeScript compiler.
 
