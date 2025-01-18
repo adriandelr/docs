@@ -188,7 +188,7 @@ This generates a **tsconfig.json** file with the following settings.
 
 Exit the terminal window and open the newly generated configuration file.
 
-In the file, you’ll find several settings, most of which are commented out by default. We’ll only be using some of these options.
+In the file, you will find several settings, most of which are commented out by default. We’ll only be using some of these options.
 
 Don not feel intimidated by all these settings. We do not need to learn them all.
 
