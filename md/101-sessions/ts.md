@@ -164,4 +164,84 @@ By default, TypeScript uses `var` instead of `let`, and _type annotations_ are `
 
 ## Configuring The TypeScript Compiler
 
+Let us create a configuration file for the TypeScript compiler.
+
+Inside our project folder, run:
+
+```
+tsc --init
+
+> Created a new tsconfig.json with:
+
+  target: es2016
+  module: commonjs
+  strict: true
+  esModuleInterop: true
+  skipLibCheck: true
+  forceConsistentCasingInFileNames: true
+
+
+You can learn more at https://aka.ms/tsconfig
+```
+
+This generates a **tsconfig.json** file with the following settings.
+
+Exit the terminal window and open the newly generated configuration file.
+
+In the file, you’ll find several settings, most of which are commented out by default. We’ll only be using some of these options.
+
+Don not feel intimidated by all these settings. We do not need to learn them all.
+
+If you are curious, you can view a description of each setting to understand its purpose.
+
+We will discuss a few key ones:
+
+**target**: Specifies the version of JavaScript that the TypeScript compiler will generate.
+
+It is set to _es2016_, which is an older standard that has already been implemented in all browsers.
+
+> In the target's blank value field, use `Ctrl + Space` to trigger IntelliSense and view all the valid values available.
+
+We can leave the default and use it as the safest option for all browser applications.
+
+> Depending on where you plan to deploy your application, you can opt for a higher target, which often leads to shorter and more concise code.
+
+**module**: Determines how the TypeScript compiler resolves modules and defines the module system for generating the output JavaScript code.
+
+Common values for the module property include:
+
+- commonjs (for Node.js applications)
+- es6 or esnext (for ES modules)
+- amd, system, umd (other module formats for different environments)
+
+This setting helps TypeScript determine how to structure the import/export statements in the compiled JavaScript code.
+
+**rootDir**: Specifies the directory that holds our source files.
+
+It is set to `./`, which represents the current folder. By convention, we typically place our source code in a separate folder.
+
+Back in our project panel, let’s create a new folder named **src** and move _basics.ts_ inside, then delete _basics.js_.
+
+Enable and change the value of `rootDir` to `./src`.
+
+**outDir**: A similar setting that specifies the directory where our JavaScript files will be placed.
+
+Enable it and change the value to `./dist`.
+
+When we compile our code using the TypeScript compiler, the generated JavaScript files will be stored in this distributable folder.
+
+**removeComments**: A useful setting to remove all comments from our TypeScript code, making the generated JavaScript code cleaner and shorter.
+
+**noEmitOnError**: By default, when we compile our code, the TypeScript compiler will still generate JavaScript files even if there are errors.
+
+This is likely not what we want, so the best approach is to always enable this setting.
+
+> This ensures that if there are any mistakes in the code, the TypeScript compiler will not generate any JavaScript files.
+
+With this configuration file in place, we can now go back to the terminal and compile our code by simply running `tsc`, which will compile all TypeScript files in the project.
+
+We now have a new folder called **dist** that contains our JavaScript file.
+
+## Debugging In TypeScript
+
 ...
