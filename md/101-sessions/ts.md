@@ -133,7 +133,7 @@ Let’s write some TypeScript code.
 In our file, we declare a variable using the `let` keyword called **age**, and annotate it with _number_. Then, we can initialize it with a value:
 
 ```
-let count: number = 5;
+let count: number = 0;
 ```
 
 By typing a colon followed by the type, we can `annotate` or specify the type of the variable.
@@ -243,5 +243,186 @@ With this configuration file in place, we can now go back to the terminal and co
 We now have a new folder called **dist** that contains our JavaScript file.
 
 ## Debugging In TypeScript
+
+Let see how to debug a TypeScript application in VSCode.
+
+## Emitting Source Map
+
+This is incredibly helpful when things go wrong, allowing us to run our code line by line and observe exactly what happens behind the scenes.
+
+We need to follow a few steps:
+
+First, we navigate to the **tsconfig.json** file.
+
+In the `emit` section, we enable the `sourceMap` feature.
+
+It is a file that indicates how each line of our TypeScript code corresponds to the generated JavaScript code.
+
+Let me show you how to do this:
+
+Back in the terminal, let us recompile our code. In the output folder,
+
+you will notice a new file called `basics.js.map`:
+
+```
+{"version":3,"file":"basics.js","sourceRoot":"","sources":["basics.ts"],"names":[],"mappings":";AAAA,mCAAmC;AACnC,IAAI,KAAK,GAAW,CAAC,CAAC"}
+```
+
+This is our source map. It contains code that indicates how our TypeScript code maps to the corresponding JavaScript code.
+
+This file isn’t meant for us to interpret directly. It’s designed for debuggers and machines to use for accurate debugging.
+
+## Breakpoint Example
+
+Let’s close this file.
+
+To make debugging more engaging, let’s head over to **basics.ts** and add some logic.
+
+For example, we can write a condition: if count is less than 3, we will add 3 to it:
+
+```
+let count: number = 0;
+if (count < 3) count += 1;
+```
+
+Next, we will click on the left side of the first line to insert a breakpoint (🔴).
+
+When we begin debugging, the execution will pause at this breakpoint, allowing us to step through the code line by line from that point onward.
+
+## Creating Our `launch.json`
+
+Next, we go to the debug panel and click on **"Create and Launch"** to generate the **launch.json** file.
+
+From the dropdown, we select _Node.js_, which creates a new file in our project directory.
+
+This file contains configuration settings that instruct _VSCode_ on how to debug the application:
+
+```
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/temp/src/basics.ts",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    }
+  ]
+}
+
+```
+
+We are using _Node.js_ to launch the program.
+
+Inside the file, there is a label called `Launch Program`, which tells _VSCode_ which program to run during debugging.
+
+We can see that our `program` starts here. In the source folder, we have **index.ts**.
+
+In the `outFiles`, we have ouroutput files that are generated and stored in our project workspace as files with the `.js` extension.
+
+### Pre Launch Task
+
+First, we need to create a default build task.
+
+Go to `Command Palette` by using `F1`.
+
+Type in `Configure Default Build Task` and select our **tsconfig.json** from our directory:
+
+```
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": ["$tsc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "label": "tsc: build - tsconfig.json"
+    }
+  ]
+}
+```
+
+In _launch.json_, under _program_, we need to add one more setting called `preLaunchTask`. We’re going to set it to a string with this value:
+
+```
+"program": "${workspaceFolder}/src/basics.ts",
+"preLaunchTask": "tsc: build - tsconfig.json",
+"outFiles": ["${workspaceFolder}/**/*.js"]
+```
+
+With this setting, we are telling _VSCode_ to use the TypeScript compiler to build our application using the **tsconfig.json** configuration file.
+
+This ensures that the TypeScript code is compiled before debugging starts.
+
+## Start Our Debugging
+
+Let’s go back to **basics.ts**.
+
+To start debugging, we can go to the debug panel and click on `Launch Program` or if you prefer to use a shortcut, use `F5`.
+
+This will start the debugging session and pause at the breakpoint we set earlier.
+
+## Debugging Tools
+
+Now that our program has started, the execution has paused right at the breakpoint.
+
+At the top, we have a set of debugging tools for controlling the execution flow of our code. These include:
+
+- **Step Over:** Executes the current line and moves to the next. Shortcut: F10
+
+- **Step Into**: Steps into a function if the current line contains a function call.
+
+- **Step Out**: Steps out of the current function and continues execution from the next line.
+
+- **Restart**: Restarts the debugging session.
+
+- **Stop**: Stops the debugging session.
+
+In the `tooltip`, you’ll see the shortcut for each tool.
+
+For example, the shortcut for stepping over a line is `F10`.
+
+### Variables
+
+On the left side, under the **Variables** section, you can see all the variables detected during this debugging session.
+
+Under `Local`, we have the _count_ variable.
+
+As we execute each line, you will see the value of this variable get updated accordingly.
+
+### Watch
+
+If there is something you do not see in the _Variables_ window, you can go to the **Watch** window and add a watch expression.
+
+For example, we can insert the _count_ variable, which is initially set to _undefined_:
+
+![ts-watch](images/ts-watch.png)
+
+This will allow us to track its value as we step through the code.
+
+Let us step over line by line and see our value gets updated, but since our code terminated, we no longer see the expected value.
+
+Add a _console.log_ at the end of the line to execute an output of our _count_ value:
+
+```
+console.log(count);
+```
+
+Step over until the last line and see that the value is 1.
+
+This is how debugging works in _VSCode_.
+
+It is incredibly useful when things go wrong, as we can start our program and execute it line by line, inspecting variables and code behavior at each step.
+
+## Fundamentals
 
 ...
