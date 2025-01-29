@@ -489,4 +489,56 @@ Hover over the variable, and you can see that TypeScript has inferred the same t
 
 ## **any** Type
 
+In TypeScript, there’s a type called **any**, which can represent any value.
+
+If we declare a variable without initializing it, TypeScript assumes it has the any type.
+
+This means we can assign it a number first and later a string, but doing so goes against the core principle of TypeScript, which is type safety.
+
+By using any, we lose the benefits of type checking, which is one of the main advantages of TypeScript.
+
+As a best practice, it’s recommended to avoid using the any type whenever possible.
+
+Let us look at an example. Say we have a function called display that takes a text parameter and logs it to the console:
+
+```
+function display(text) {
+  console.log(text);
+}
+```
+
+Notice that we have a compilation error.
+
+The error message says that the parameter document implicitly has an any type.
+
+**Implicitly** means we haven’t explicitly defined the type for this parameter, so the compiler is inferring or guessing the type.
+
+Suppose we’re working on a JavaScript project that we’re converting to TypeScript, and at this point, it’s not feasible to explicitly annotate this parameter with a specific type.
+
+In such cases, we have to use the any type.
+
+Now, we have **two options** to suppress this error:
+
+The option is to explicitly annotate the parameter with _any_, signaling to the compiler that we acknowledge its type as any.
+
+The _second option_ is to modify the **tsconfig.json** file.
+
+Under the Type Checking section, you’ll find that _strict_ is enabled, which turns on several basic type-checking features.
+
+One of these is **noImplicitAny**, removing the comment will enable the feature, causing the compiler to flag implicit any types as errors.
+
+To suppress these errors, you can disable noImplicitAny by setting it to _false_:
+
+```
+"noImplicitAny": false
+```
+
+Back in _basics.ts_, the error is gone. Use it caution only if you know what you're doing.
+
+Otherwise, disabling type checking defeats the purpose of using TypeScript, as it takes away its key benefits.
+
+Lastly, revert the changes made in the config.
+
+## Arrays
+
 ...
