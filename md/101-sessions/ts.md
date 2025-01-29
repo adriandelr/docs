@@ -425,4 +425,68 @@ It is incredibly useful when things go wrong, as we can start our program and ex
 
 ## Fundamentals
 
+Let us dive into the basics of TypeScript and explore its key concepts:
+
+- **any** type
+- Arrays
+- Tuples
+- Enums
+- Functions
+- Objects
+
+These will serve as the foundation for upcoming concepts.
+
+## Built-In Types
+
+**JavaScript** comes with built-in types such as:
+
+- number
+- string
+- boolean
+- null
+- undefined
+- object
+
+**TypeScript** expands on this by adding new types such as:
+
+- any
+- unknown
+- never
+- enum
+- tuple
+
+Throughout the section, you will see each of these steps in detail.
+
+Let us see how we can work with primitive types in TypeScript.
+
+In our code below, we declare a variable with the type _number_ and set the value:
+
+```
+let count: number = 1;
+```
+
+We are `annotating or explaining` the type of _count_ using this syntax.
+
+Let’s also declare a variable of type string and assign the value and a boolean:
+
+```
+let count: number = 1;
+let subject: string = 'TypeScript';
+let isDone: boolean = true;
+```
+
+In TypeScript, explicit _type annotations_ are not always necessary since the compiler can infer the variable type based on its assigned value.
+
+For example, since we’ve assigned a _number_ to this variable, the TypeScript compiler automatically recognizes it as a number, eliminating the need for explicit annotation.
+
+```
+let count = 1;
+let subject = 'TypeScript';
+let isDone = true;
+```
+
+Hover over the variable, and you can see that TypeScript has inferred the same type.
+
+## **any** Type
+
 ...
