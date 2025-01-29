@@ -21,5 +21,3 @@
 **9. Differnce between computed and watchers?**
 
 **10. Give at least 3 lifecycle hooks.**
-
-Credits to _Ruje Alfon_

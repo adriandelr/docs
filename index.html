@@ -75,6 +75,24 @@
           collapsable: false,
         },
         {
+          title: "INT Sessions",
+          children: [
+            {
+              title: "Basics",
+              link: "/int-sessions/basics",
+            },
+            {
+              title: "React",
+              link: "/int-sessions/react",
+            },
+            {
+              title: "Vue",
+              link: "/int-sessions/vue",
+            },
+          ],
+          collapsable: false,
+        },
+        {
           title: "Training",
           children: [
             {
@@ -89,30 +107,6 @@
           collapsable: false,
         },
       ];
-
-      // When I is triggered, add int-sessions
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "I") {
-          sidebarEntries.push({
-            title: "INT Sessions",
-            children: [
-              {
-                title: "Basics",
-                link: "/int-sessions/basics",
-              },
-              {
-                title: "React",
-                link: "/int-sessions/react",
-              },
-              {
-                title: "Vue",
-                link: "/int-sessions/vue",
-              },
-            ],
-            collapsable: false,
-          });
-        }
-      });
 
       // Prepare nav entries
       const navEntries = [
