@@ -471,8 +471,8 @@ Let’s also declare a variable of type string and assign the value and a boolea
 
 ```
 let count: number = 1;
-let subject: string = 'TypeScript';
-let isDone: boolean = true;
+let subject: string = 'TS';
+let isDone: boolean = false;
 ```
 
 In TypeScript, explicit _type annotations_ are not always necessary since the compiler can infer the variable type based on its assigned value.
