@@ -544,46 +544,46 @@ Lastly, revert the changes made in the config.
 In JavaScript, we can define an **array** like this:
 
 ```
-let numbers = [1, 2, 3];
+let IDs = [1, 2, 3];
 ```
 
 One key feature of JavaScript arrays is that each element can have a different type.
 
-For example, we can have two numbers followed by a string, and this is completely valid JavaScript code. This is because JavaScript arrays are dynamic, allowing elements of different types:
+For example, we can have two integers followed by a string, and this is completely valid JavaScript code. This is because JavaScript arrays are dynamic, allowing elements of different types:
 
 ```
-let numbers = [1, 2, '3'];
+let IDs = [1, 2, '3'];
 ```
 
-If we pass this array to a function expecting a list of numbers, the third element (a string) will cause an issue. This is where TypeScript helps—by allowing us to explicitly apply a type annotation to enforce type safety.
+If we pass this array to a function expecting a list of integers, the third element (a string) will cause an issue. This is where TypeScript helps—by allowing us to explicitly apply a type annotation to enforce type safety.
 
-If _numbers_ is a number array, TypeScript will immediately show an error at compile time, preventing potential runtime issues:
+If _IDs_ is a number array, TypeScript will immediately show an error at compile time, preventing potential runtime issues:
 
 ```
-let numbers: numbers[] = [1, 2, '3'];
+let IDs: numbers[] = [1, 2, '3'];
 ```
 
-Revert the string to a number to fix the issue. In this case, we don’t even need to apply a type annotation because every element in the array is a number. If we remove the type annotation, the compiler can still infer the type of the variable automatically.
+Revert the string to an integer to fix the issue. In this case, we do not even need to apply a type annotation because every element in the array is a number. If we remove the type annotation, the compiler can still infer the type of the variable automatically.
 
 If we start with an empty array, the type of this variable will be _any_:
 
 ```
-let numbers = [];
+let IDs = [];
 ```
 
-This is something we should avoid because an any array allows a mix of different types. For example, the first element could be a number, while the second could be a string or a boolean.
+This is something we should avoid because an any array allows a mix of different types. For example, the first element could be a integer, while the second could be a string or a boolean.
 
-If you want to use an empty array, you should explicitly apply a type annotation, such as a number array, to ensure type safety.
+If you want to use an empty array, you should explicitly apply a type annotation, such as a IDs array, to ensure type safety.
 
 ### Code Completion
 
 Let me show you another great benefit of using TypeScript, **code completion** or **IntelliSense**.
 
-If we type _numbers.forEach_ and pass an arrow function like _n_ =>, then type _n._ inside the function, we can see all the properties and methods available for number objects:
+If we type _IDs.forEach_ and pass an arrow function like _n_ =>, then type _n._ inside the function, we can see all the properties and methods available for number objects:
 
 ```
-let numbers = [];
-numbers.forEach(n -> n.)
+let IDs = [];
+IDs.forEach(n -> n.)
 ```
 
 Since our editor knows the type of n, it provides code completion, making these methods easily accessible.
@@ -591,5 +591,64 @@ Since our editor knows the type of n, it provides code completion, making these 
 This is a powerful productivity-boosting feature that we do not get with plain JavaScript.
 
 ## Tuples
+
+TypeScript has a special type called a tuple, which is a fixed-length array where each element has a specific type.
+
+**Tuples** are often used when working with pairs of values.
+
+For example, if we want to represent a user with two values, an ID and a name. We declare a variable and annotate it using a special syntax:
+
+```
+// 1, Adrian
+let person
+```
+
+We use square brackets and specify that the first element is a number and the second is a string. Then, we initialize the variable accordingly:
+
+```
+let person = [number, string] = [1, 'Adrian'];
+```
+
+This ensures that our array always has exactly two elements - nothing more, nothing less.
+
+If we add a third element to the tuple, we get a compilation error stating that [number, string, number] is not assignable to [number, string].
+
+This enforces that the tuple must have exactly two elements with the specified types.
+
+Before, we get code completion, or IntelliSense.
+
+If we access the first element, we see all the methods of number objects:
+
+```
+person[0].
+```
+
+Similarly, if we access the second element, we see all the properties and methods of string objects:
+
+```
+person[1].
+```
+
+One thing to note about _tuples_ is that, internally, they are represented as plain JavaScript arrays.
+
+So, when we compile our TypeScript code, it simply results in a regular JavaScript array:
+
+```
+"use strict"
+let person = [1, 'Adrian];
+//# sourceMappingURL=basics.js.map
+```
+
+> It is a good practice to keep _tuples_ limited to just two values. Using more than that can make your code harder to read and understand.
+
+For example, if you add a boolean and another number to a tuple, it becomes unclear what these values represent:
+
+```
+let person: [number, string, boolean, number] = [1, Adrian, true, 0]
+```
+
+This makes the code harder to understand. _Tuples_ are most useful when dealing with two values, like key-value pairs, where their purpose is clear.
+
+## Enums
 
 ...
