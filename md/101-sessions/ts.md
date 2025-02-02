@@ -541,4 +541,55 @@ Lastly, revert the changes made in the config.
 
 ## Arrays
 
+In JavaScript, we can define an **array** like this:
+
+```
+let numbers = [1, 2, 3];
+```
+
+One key feature of JavaScript arrays is that each element can have a different type.
+
+For example, we can have two numbers followed by a string, and this is completely valid JavaScript code. This is because JavaScript arrays are dynamic, allowing elements of different types:
+
+```
+let numbers = [1, 2, '3'];
+```
+
+If we pass this array to a function expecting a list of numbers, the third element (a string) will cause an issue. This is where TypeScript helps—by allowing us to explicitly apply a type annotation to enforce type safety.
+
+If _numbers_ is a number array, TypeScript will immediately show an error at compile time, preventing potential runtime issues:
+
+```
+let numbers: numbers[] = [1, 2, '3'];
+```
+
+Revert the string to a number to fix the issue. In this case, we don’t even need to apply a type annotation because every element in the array is a number. If we remove the type annotation, the compiler can still infer the type of the variable automatically.
+
+If we start with an empty array, the type of this variable will be _any_:
+
+```
+let numbers = [];
+```
+
+This is something we should avoid because an any array allows a mix of different types. For example, the first element could be a number, while the second could be a string or a boolean.
+
+If you want to use an empty array, you should explicitly apply a type annotation, such as a number array, to ensure type safety.
+
+### Code Completion
+
+Let me show you another great benefit of using TypeScript, **code completion** or **IntelliSense**.
+
+If we type _numbers.forEach_ and pass an arrow function like _n_ =>, then type _n._ inside the function, we can see all the properties and methods available for number objects:
+
+```
+let numbers = [];
+numbers.forEach(n -> n.)
+```
+
+Since our editor knows the type of n, it provides code completion, making these methods easily accessible.
+
+This is a powerful productivity-boosting feature that we do not get with plain JavaScript.
+
+## Tuples
+
 ...
