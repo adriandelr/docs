@@ -789,4 +789,123 @@ The _best practice_ is to _always annotate_ functions, the _parameters_ and _ret
 
 ## Objects
 
-...
+Declare an _user_ object with an _id_ property.
+
+```
+let user = { id: 1 }
+```
+
+In JavaScript, objects are dynamic, meaning their shape can change throughout the program.
+
+We can dynamically add a new property like name to a _user_ object, and it’s completely valid:
+
+```
+let user = { id: 1 }
+user.name = 'Adrian'
+```
+
+In TypeScript, this is not allowed by default.
+
+The compiler throws an error, stating that the property name does not exist on this type because the object is strictly typed with only an id property of type number.
+
+The TypeScript compiler has inferred the shape of the _user_ object.
+
+If you hover over _user_, you will see that it’s recognized as an object with an _id_ property of type _number_.
+
+### Annotating
+
+Like our previously declared variables, we can explicitly add a type annotation here:
+
+```
+let user: {
+  id: number,
+  name: string
+} = { id: 1};
+```
+
+We encounter a new error where the compiler states that the property name is missing.
+
+This happens because the user object must have both id and name properties upon declaration.
+
+There are two ways to fix this.
+
+Set the property _name_ to a string:
+
+```
+let user: {
+  id: number,
+  name: string
+} = { id: 1, name: 'Adrian'};
+```
+
+This is our preferred way of setting it.
+
+Or set the property _name_ as optional:
+
+```
+let user: {
+  id: number,
+  name?: string
+} = { id: 1};
+```
+
+No need to assign the the property value while initializing the object.
+
+Even though TypeScript allows this, we should avoid it because, conceptually, having a user without a name does not make sense, but only in some cases.
+
+### Read-only Properties
+
+Sometimes, we want to make certain properties **read-only** to prevent accidental modifications later.
+
+In our current example, we can modify a user’s _id_ at any time, which may not be valid:
+
+```
+let user: {
+  id: number,
+  name: string
+} = { id: 1, name: 'Adrian'};
+user.id = 0;
+```
+
+This is where we use the _read-only_ modifier:
+
+```
+let user: {
+  readonly id: number,
+  name: string
+} = { id: 1, name: 'Adrian'};
+```
+
+Now, the TypeScript compiler prevents us from accidentally modifying this property.
+
+### Methods in Objects
+
+We can define a function inside our object using an arrow function syntax, specifying its parameters and return type:
+
+```
+let user: {
+  readonly id: number,
+  name: string,
+  birthDate: (date: Date) => void
+} = { id: 1, name: 'Adrian'};
+```
+
+> Date is a built in data type in JavaScript.
+
+We get an error saying the property is missing because, when initializing the object, we have not provided the function itself:
+
+```
+let user: {
+  readonly id: number,
+  name: string,
+  birthDate: (date: Date) => void
+} = {
+  id: 1,
+  name: 'Adrian'
+  birthDate: (date: Date) => {
+    console.log(date);
+  }
+};
+```
+
+Our type annotation is a bit cluttered, but we will work on a cleaner approach.
