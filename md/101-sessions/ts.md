@@ -750,6 +750,8 @@ Back in our _basics.ts_, we have a warning saying that our parameter was declare
 
 To check for return statements in function paths, even with conditions, we can make use of `noImplicitReturns` in our config.
 
+> By default, a function without a _return statement_, returns _undefined_.
+
 ### Type Checking: Unused Variables
 
 To detect unused variables, enable `noUnusedLocals` in our config.
