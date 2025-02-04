@@ -651,4 +651,59 @@ This makes the code harder to understand. _Tuples_ are most useful when dealing 
 
 ## Enums
 
+TypeScript has another built-in type called **enum**, which represents a list of related constants.
+
+It allow us to define a set of named constants, just like in C# or Java.
+
+Let us say we want to represent the size of drinks as constants defined like this:
+
+```
+const small = "S";
+const medium = "M";
+const large = "L";
+```
+
+We can use this constant consistently throughout our code.
+
+Another approach is to organize this constant variables within an _enum_ enclosed within curly braces:
+
+```
+const enum DrinkSize { SMALL, MEDIUM, LARGE }
+```
+
+By default, the TypeScript compiler assigns index-based numeric values to these variables.
+
+Next, we could assign values to each of them:
+
+```
+const enum DrinkSize {
+    SMALL = "S",
+    MEDIUM = "M",
+    LARGE = "L"
+}
+```
+
+> To name an _enum_, we use PascalCase, each word should start with an uppercase letter.
+
+Now that we have this new type, we can declare a variable, like mySize, of type Size and assign it the value Size.Medium:
+
+```
+let mySize: Size = Size.Medium;
+console.log(mySize);
+```
+
+Back in the terminal to compile and run:
+
+```
+tsc
+node src/basics.js
+> "M"
+```
+
+We can see the value associated with our _enum_ member.
+
+> To generate an optimized _enum_, declare it using **const** and see the differences in our _js_ file.
+
+## Functions
+
 ...
