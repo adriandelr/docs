@@ -702,8 +702,89 @@ node src/basics.js
 
 We can see the value associated with our _enum_ member.
 
-> To generate an optimized _enum_, declare it using **const** and see the differences in our _js_ file.
+> To generate an optimized _enum_, declare it using **const** and see the differences in the _js_ file.
 
 ## Functions
+
+Let us see how TypeScript helps prevent common issues when working with functions.
+
+We define a function with a return value that is **void**, meaning it does not return a value.
+
+```
+function calcPrice(price: number) {}
+```
+
+Now, if we add a return value, the type of the return value is its type which is _number_:
+
+```
+function calcPrice(price: number) {
+  return 0;
+}
+```
+
+The TypeScript compiler automatically infers the return type, which is helpful.
+
+However, as a best practice, we should always explicitly _annotate_ our _functions_, including both parameters and return types.
+
+This is especially important when building an _API_ for others to use, as it improves clarity and reduces the risk of errors.
+
+In this case, to _annotate_ the return type, we place it after the list of parameters, add a colon, and specify the return type, such as _number_ or _void_ if we’re not returning a value:
+
+```
+function calcPrice(price: number): number {
+  return 0;
+}
+```
+
+> **Annotating** your functions ensures that if you forget to return a value or return the wrong type, you will get a compilation error immediately.
+
+Always annotate your functions to catch these issues early.
+
+### Type Checking: Unused Parameter
+
+In our TS config file, under the _Type Checking_ section, there is a compiler option called `noUnusedParameters` that we can enable, as it is not part of the strict settings.
+
+Back in our _basics.ts_, we have a warning saying that our parameter was declared, but its _value is never read_, and our parameter was not used.
+
+### Type Checking: Implicit Returns
+
+To check for return statements in function paths, even with conditions, we can make use of `noImplicitReturns` in our config.
+
+### Type Checking: Unused Variables
+
+To detect unused variables, enable `noUnusedLocals` in our config.
+
+### Expected, Optional and Default Arguments
+
+TypeScript checks for the **expected numbers of parameters** shown in this example, where we got 2 arguments instead of 1:
+
+```
+function calcPrice(price: number): number {
+  return price;
+}
+calcPrice(100, 1);
+```
+
+We can also **add optional parameters** using `?`:
+
+```
+function calcPrice(price: number, amount?: number): number {
+  return price;
+}
+calcPrice(100, 1);
+```
+
+To set a **default value for a parameter** when no value is given, we can:
+
+```
+function calcPrice(price: number, amount: number = 1): number {
+  return price * amount;
+}
+calcPrice(100);
+```
+
+The _best practice_ is to _always annotate_ functions, the _parameters_ and _return types_ and enable these compiler options.
+
+## Objects
 
 ...
